@@ -1,0 +1,122 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "amaze me",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "gameIntent",
+                    "slots": [],
+                    "samples": [
+                        "yes I am ready",
+                        "ready",
+                        "game",
+                        "start",
+                        "yes",
+                        "start the game",
+                        "open game",
+                        "to start my game",
+                        "to open my game",
+                        "to open game",
+                        "open the game",
+                        "to open the game",
+                        "start game",
+                        "to start game",
+                        "to start the game"
+                    ]
+                },
+                {
+                    "name": "answerIntent",
+                    "slots": [
+                        {
+                            "name": "answer",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "Is it Tiger"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "are you {answer}",
+                        "you are {answer}",
+                        "the answer is {answer}",
+                        "is the answer {answer}",
+                        "is it {answer}"
+                    ]
+                },
+                {
+                    "name": "nextQuestionIntent",
+                    "slots": [],
+                    "samples": [
+                        "I am ready",
+                        "tell me a question",
+                        "next question",
+                        "next question please"
+                    ]
+                },
+                {
+                    "name": "rulesIntent",
+                    "slots": [],
+                    "samples": [
+                        "tell me rules",
+                        "say the rules again",
+                        "brief me more on rules",
+                        "tell me the rules"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "answerIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "answer",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1461380146721.1429325424836"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1461380146721.1429325424836",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Just say, is the answer, followed by your answer"
+                    }
+                ]
+            }
+        ]
+    }
+}
